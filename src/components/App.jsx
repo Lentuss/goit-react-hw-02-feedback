@@ -16,8 +16,23 @@ class App extends Component {
     },
   };
 
+  countTotalFeedback = () => {
+    const value = this.state;
+    const total = value.good + value.neutral + value.bad;
+    return total;
+  };
+
+  countPositiveFeedbackPercentage = () =>
+    Number.parseInt((this.state.good / this.countTotalFeedback()) * 100);
+
   render() {
-    return <Section state={this.state} />;
+    return (
+      <Section
+        state={this.state}
+        total={this.countTotalFeedback()}
+        positivePercent={this.countPositiveFeedbackPercentage()}
+      />
+    );
   }
 }
 

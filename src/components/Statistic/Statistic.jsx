@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   StatisticSection,
   StatisticTitle,
@@ -9,21 +10,30 @@ import {
 } from './Statistic.styled';
 
 class Statistic extends Component {
+  static propTypes = {
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+    total: PropTypes.number,
+    positivePercent: PropTypes.number,
+  };
+
   render() {
-    const value = this.props.value;
-    const total = value.good + value.neutral + value.bad;
-    const goodPercentage = Number.parseInt((value.good / total) * 100);
+    const value = this.props.state;
+    const totalFeedback = this.props.total;
+    const positivePercent = this.props.positivePercent;
+
     return (
       <StatisticSection>
         <StatisticTitle>Statistics</StatisticTitle>
-        {total !== 0 ? (
+        {totalFeedback !== 0 ? (
           <>
             <StatisicItem type="good">Good: {value.good}</StatisicItem>
             <StatisicItem type="neutral">Neutral: {value.neutral}</StatisicItem>
             <StatisicItem type="bad">Bad: {value.bad}</StatisicItem>
-            <TotalFeedbacks>Total feedback: {total}</TotalFeedbacks>
+            <TotalFeedbacks>Total feedback: {totalFeedback}</TotalFeedbacks>
             <PositivePercent>
-              Positive feedback: {goodPercentage}%
+              Positive feedback: {positivePercent}%
             </PositivePercent>
           </>
         ) : (
