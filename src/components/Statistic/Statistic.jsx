@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Notification from '../Notification';
 import {
   StatisticSection,
   StatisticTitle,
   StatisicItem,
   TotalFeedbacks,
   PositivePercent,
-  Notification,
 } from './Statistic.styled';
 
 class Statistic extends Component {
@@ -37,7 +37,7 @@ class Statistic extends Component {
             </PositivePercent>
           </>
         ) : (
-          <Notification>No feedback yet</Notification>
+          <Notification message="No feedback yet" />
         )}
       </StatisticSection>
     );

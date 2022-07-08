@@ -39,6 +39,3 @@ export const TotalFeedbacks = styled.p`
 export const PositivePercent = styled.p`
   color: green;
 `;
-export const Notification = styled.p`
-  font-style: italic;
-`;
