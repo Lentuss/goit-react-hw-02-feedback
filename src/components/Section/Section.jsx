@@ -4,11 +4,11 @@ import Statistic from 'components/Statistic/Statistic';
 import FeedBackForm from 'components/FeedbackForm/FeedbackForm';
 import { FeedbackContainer, FormTitle } from './Section.styled';
 
-const Section = ({ title, state, total, positivePercent }) => {
+const Section = ({ title, state, onFeedbackLeave, total, positivePercent }) => {
   return (
     <FeedbackContainer>
       <FormTitle>{title}</FormTitle>
-      <FeedBackForm onFeedbackLeave={state.handleClick} />
+      <FeedBackForm onFeedbackLeave={onFeedbackLeave} />
       <Statistic
         state={state}
         total={total}
@@ -22,7 +22,7 @@ Section.propTypes = {
   good: PropTypes.number,
   neutral: PropTypes.number,
   bad: PropTypes.number,
-  handleClick: PropTypes.func,
+  onFeedbackLeave: PropTypes.func,
   countTotalFeedback: PropTypes.func,
   countPositiveFeedbackPercentage: PropTypes.func,
 };

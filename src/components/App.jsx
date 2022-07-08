@@ -7,12 +7,19 @@ class App extends Component {
     neutral: 0,
     bad: 0,
 
-    handleClick: e => {
-      this.setState(prev => {
-        const stateTarget = e.target.name;
-        return { [stateTarget]: prev[stateTarget] + 1 };
-      });
-    },
+    // handleClick: e => {
+    //   this.setState(prev => {
+    //     const stateTarget = e.target.name;
+    //     return { [stateTarget]: prev[stateTarget] + 1 };
+    //   });
+    // },
+  };
+
+  handleClick = e => {
+    this.setState(prev => {
+      const stateTarget = e.target.name;
+      return { [stateTarget]: prev[stateTarget] + 1 };
+    });
   };
 
   countTotalFeedback = () => {
@@ -29,6 +36,7 @@ class App extends Component {
       <Section
         title={'Please, leave your feedback'}
         state={this.state}
+        onFeedbackLeave={this.handleClick}
         total={this.countTotalFeedback()}
         positivePercent={this.countPositiveFeedbackPercentage()}
       />
