@@ -6,13 +6,6 @@ class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-
-    // handleClick: e => {
-    //   this.setState(prev => {
-    //     const stateTarget = e.target.name;
-    //     return { [stateTarget]: prev[stateTarget] + 1 };
-    //   });
-    // },
   };
 
   handleClick = e => {
