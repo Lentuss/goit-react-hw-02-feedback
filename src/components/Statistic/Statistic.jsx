@@ -19,7 +19,7 @@ class Statistic extends Component {
   };
 
   render() {
-    const value = this.props.state;
+    const { good, neutral, bad } = this.props.state;
     const totalFeedback = this.props.total;
     const positivePercent = this.props.positivePercent;
 
@@ -28,9 +28,9 @@ class Statistic extends Component {
         <StatisticTitle>Statistics</StatisticTitle>
         {totalFeedback !== 0 ? (
           <>
-            <StatisicItem type="good">Good: {value.good}</StatisicItem>
-            <StatisicItem type="neutral">Neutral: {value.neutral}</StatisicItem>
-            <StatisicItem type="bad">Bad: {value.bad}</StatisicItem>
+            <StatisicItem type="good">Good: {good}</StatisicItem>
+            <StatisicItem type="neutral">Neutral: {neutral}</StatisicItem>
+            <StatisicItem type="bad">Bad: {bad}</StatisicItem>
             <TotalFeedbacks>Total feedback: {totalFeedback}</TotalFeedbacks>
             <PositivePercent>
               Positive feedback: {positivePercent}%

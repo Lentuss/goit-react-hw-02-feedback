@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Statistic from 'components/Statistic/Statistic';
 import FeedBackForm from 'components/FeedbackForm/FeedbackForm';
-import { FeedbackContainer } from './Section.styled';
+import { FeedbackContainer, FormTitle } from './Section.styled';
 
-const Section = ({ state, total, positivePercent }) => {
+const Section = ({ title, state, total, positivePercent }) => {
   return (
     <FeedbackContainer>
+      <FormTitle>{title}</FormTitle>
       <FeedBackForm onFeedbackLeave={state.handleClick} />
       <Statistic
         state={state}

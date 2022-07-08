@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-export const FormTitle = styled.h2`
-  font-size: 26px;
-  font-weight: bold;
-  /* color: dimgrey; */
-`;
-
 export const FeedbackForm = styled.div`
   display: block;
   padding: 20px;

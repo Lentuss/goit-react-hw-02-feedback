@@ -12,3 +12,8 @@ export const FeedbackContainer = styled.div`
 
   background-color: aquamarine;
 `;
+export const FormTitle = styled.h2`
+  font-size: 26px;
+  font-weight: bold;
+  /* color: dimgrey; */
+`;

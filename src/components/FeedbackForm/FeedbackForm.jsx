@@ -1,35 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { FeedbackButton, FeedbackForm, FormTitle } from './FeedbackForm.styled';
+import { FeedbackButton, FeedbackForm } from './FeedbackForm.styled';
 
 class FeedBackForm extends Component {
   static propTypes = {
     onFeedbackLeave: PropTypes.func,
   };
   render() {
+    const { onFeedbackLeave } = this.props;
     return (
       <FeedbackForm>
-        <FormTitle>Please, leave your feedback</FormTitle>
-        <FeedbackButton
-          type="button"
-          name="good"
-          onClick={this.props.onFeedbackLeave}
-        >
+        <FeedbackButton type="button" name="good" onClick={onFeedbackLeave}>
           Good
         </FeedbackButton>
-        <FeedbackButton
-          type="button"
-          name="neutral"
-          onClick={this.props.onFeedbackLeave}
-        >
+        <FeedbackButton type="button" name="neutral" onClick={onFeedbackLeave}>
           Neutral
         </FeedbackButton>
-        <FeedbackButton
-          type="button"
-          name="bad"
-          onClick={this.props.onFeedbackLeave}
-        >
+        <FeedbackButton type="button" name="bad" onClick={onFeedbackLeave}>
           Bad
         </FeedbackButton>
       </FeedbackForm>

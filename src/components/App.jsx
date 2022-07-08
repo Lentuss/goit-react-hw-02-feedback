@@ -12,7 +12,6 @@ class App extends Component {
         const stateTarget = e.target.name;
         return { [stateTarget]: prev[stateTarget] + 1 };
       });
-      // alert('Thank for your feedback');
     },
   };
 
@@ -28,6 +27,7 @@ class App extends Component {
   render() {
     return (
       <Section
+        title={'Please, leave your feedback'}
         state={this.state}
         total={this.countTotalFeedback()}
         positivePercent={this.countPositiveFeedbackPercentage()}
