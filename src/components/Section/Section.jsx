@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Statistic from 'components/Statistic/Statistic';
-import FeedBackForm from 'components/FeedbackForm/FeedbackForm';
+import Statistic from '../Statistic';
+import FeedBackForm from '../FeedbackForm';
 import { FeedbackContainer, FormTitle } from './Section.styled';
 
 const Section = ({ title, state, onFeedbackLeave, total, positivePercent }) => {
