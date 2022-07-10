@@ -8,18 +8,14 @@ class FeedBackForm extends Component {
     onFeedbackLeave: PropTypes.func,
   };
   render() {
-    const { onFeedbackLeave } = this.props;
+    const { onFeedbackLeave, state } = this.props;
     return (
       <FeedbackForm>
-        <FeedbackButton type="button" name="good" onClick={onFeedbackLeave}>
-          Good
-        </FeedbackButton>
-        <FeedbackButton type="button" name="neutral" onClick={onFeedbackLeave}>
-          Neutral
-        </FeedbackButton>
-        <FeedbackButton type="button" name="bad" onClick={onFeedbackLeave}>
-          Bad
-        </FeedbackButton>
+        {Object.keys(state).map(key => (
+          <FeedbackButton name={key} onClick={onFeedbackLeave}>
+            {key}
+          </FeedbackButton>
+        ))}
       </FeedbackForm>
     );
   }

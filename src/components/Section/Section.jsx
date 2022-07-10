@@ -8,7 +8,7 @@ const Section = ({ title, state, onFeedbackLeave, total, positivePercent }) => {
   return (
     <FeedbackContainer>
       <FormTitle>{title}</FormTitle>
-      <FeedBackForm onFeedbackLeave={onFeedbackLeave} />
+      <FeedBackForm state={state} onFeedbackLeave={onFeedbackLeave} />
       <Statistic
         state={state}
         total={total}
