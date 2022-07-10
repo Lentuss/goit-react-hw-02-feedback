@@ -12,7 +12,7 @@ class FeedBackForm extends Component {
     return (
       <FeedbackForm>
         {Object.keys(state).map(key => (
-          <FeedbackButton name={key} onClick={onFeedbackLeave}>
+          <FeedbackButton name={key} key={key} onClick={onFeedbackLeave}>
             {key}
           </FeedbackButton>
         ))}
